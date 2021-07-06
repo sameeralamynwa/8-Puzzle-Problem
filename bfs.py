@@ -20,9 +20,7 @@ def left(a):
     for j in range(len(b)):
       if a[i][j] == 0:
         if j - 1 >= 0:
-          temp = b[i][j - 1]
-          b[i][j - 1] = b[i][j]
-          b[i][j] = temp
+          b[i][j - 1], b[i][j] = b[i][j], b[i][j - 1]
           c = tuple(map(tuple, b)) # Since lists are mutable it is required to be converted into some immutable container which can be used as a key in the dictionary. 
           if c in visited:
             return
@@ -36,9 +34,7 @@ def right(a):
     for j in range(len(b)):
       if a[i][j] == 0:
         if j + 1 < len(b):
-          temp = b[i][j + 1]
-          b[i][j + 1] = b[i][j]
-          b[i][j] = temp
+          b[i][j + 1], b[i][j] = b[i][j], b[i][j + 1]
           c = tuple(map(tuple, b))
           if c in visited:
             return
@@ -52,9 +48,7 @@ def up(a):
     for j in range(len(b)):
       if a[i][j] == 0:
         if i - 1 >= 0:
-          temp = b[i - 1][j]
-          b[i - 1][j] = b[i][j]
-          b[i][j] = temp
+          b[i - 1][j], b[i][j] = b[i][j], b[i - 1][j]
           c = tuple(map(tuple, b))
           if c in visited:
             return
@@ -68,9 +62,7 @@ def down(a):
     for j in range(len(b)):
       if a[i][j] == 0:
         if i + 1 < len(b):
-          temp = b[i + 1][j]
-          b[i + 1][j] = b[i][j]
-          b[i][j] = temp
+          b[i + 1][j], b[i][j] = b[i][j], b[i + 1][j]
           c = tuple(map(tuple, b))
           if c in visited:
             return
