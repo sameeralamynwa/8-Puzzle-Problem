@@ -23,7 +23,7 @@ def left(a):
           temp = b[i][j - 1]
           b[i][j - 1] = b[i][j]
           b[i][j] = temp
-          c = tuple(map(tuple, b))
+          c = tuple(map(tuple, b)) # Since lists are mutable it is required to be converted into some immutable container which can be used as a key in the dictionary. 
           if c in visited:
             return
           visited.add(c)
