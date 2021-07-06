@@ -33,7 +33,7 @@ def right(a):
     for j in range(len(b)):
       if a[i][j] == 0:
         if j + 1 < len(b):
-          b[i][j - 1], b[i][j] = b[i][j], b[i][j - 1]
+          b[i][j + 1], b[i][j] = b[i][j], b[i][j + 1]
           c = tuple(map(tuple, b))
           if c in visited:
             return
@@ -47,7 +47,7 @@ def up(a):
     for j in range(len(b)):
       if a[i][j] == 0:
         if i - 1 >= 0:
-          b[i][j - 1], b[i][j] = b[i][j], b[i][j - 1]
+          b[i - 1][j], b[i][j] = b[i][j], b[i - 1][j]
           c = tuple(map(tuple, b))
           if c in visited:
             return
@@ -61,7 +61,7 @@ def down(a):
     for j in range(len(b)):
       if a[i][j] == 0:
         if i + 1 < len(b):
-          b[i][j - 1], b[i][j] = b[i][j], b[i][j - 1]
+          b[i + 1][j], b[i][j] = b[i][j], b[i + 1][j]
           c = tuple(map(tuple, b))
           if c in visited:
             return
