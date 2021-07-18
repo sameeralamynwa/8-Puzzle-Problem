@@ -5,7 +5,7 @@ q = deque() # A queue to perform the BFS search.
 
 visited = set() # A set to avoid reaching the previously visited state.
 
-# To print the intermediate states while performing the BFS.
+# To print the intermediate states while performing the BFS. 
 
 def print_current_state(a):
   for i in a:
