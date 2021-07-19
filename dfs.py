@@ -98,4 +98,4 @@ def dfs(a, b):
 a = [[1, 2, 3], [8, 0, 4], [7, 6, 5]] # Initial State
 b = [[1, 2, 3], [0, 8, 4], [7, 6, 5]] # Goal State
 
-dfs(a, b)
+dfs(a, b) 
